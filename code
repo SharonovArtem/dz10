@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace jun1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double usdToRub = 71.54;
+            double rubToUsd = 71;
+            double eurToRub = 75.15;
+            double rubToEur = 75;
+            double usdToEur = 1.08;
+            double eurToUsd = 0.99;
+
+
+        }
+    }
+}
