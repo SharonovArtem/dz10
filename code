@@ -23,75 +23,79 @@ namespace jun1
             double exchangingRub, exchangingUsd, exchangingEur;
             string stop = "stop";
 
-            Console.WriteLine("Добро пожаловать в обменник валют!");
-            Console.WriteLine("Сколько у вас есть рублей?");
-            rub = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Отлично! Сколько у вас есть долларов?");
-            usd = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Хорошо, сколько у вас есть евро?");
-            eur = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("На вашем счету " + rub + " рублей, " + usd + " долларов и " + eur + " евро");
-            
-            while (true)
-            {
-            Console.WriteLine("Что вы хотели бы обменять?\n Рубли - нажмите 1\n Доллары - нажмите 2\n евро - нажмите 3");
-            exchangingCurrency = Console.ReadLine();
-            Console.WriteLine("На какую валюту вы хотели бы её обменять?\n Рубли - нажмите 1\n Доллары - нажмите 2\n Евро - нажмите 3");
-            desiredCurrency = Console.ReadLine();
+                Console.WriteLine("Добро пожаловать в обменник валют!");
+                Console.WriteLine("Сколько у вас есть рублей?");
+                rub = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Отлично! Сколько у вас есть долларов?");
+                usd = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Хорошо, сколько у вас есть евро?");
+                eur = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("На вашем счету " + rub + " рублей, " + usd + " долларов и " + eur + " евро");
 
-            if (exchangingCurrency == "1" && desiredCurrency == "2") 
+                while (true)
                 {
-                    Console.WriteLine("Сколько рублей вы хотели бы обменять?");
-                    exchangingRub = Convert.ToDouble(Console.ReadLine());
-                    usd += exchangingRub / rubToUsd;
-                    rub -= exchangingRub;
-                    Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
-                }
+                    Console.WriteLine("Что вы хотели бы обменять?\n Рубли - нажмите 1\n Доллары - нажмите 2\n евро - нажмите 3");
+                    exchangingCurrency = Console.ReadLine();
+                    Console.WriteLine("На какую валюту вы хотели бы её обменять?\n Рубли - нажмите 1\n Доллары - нажмите 2\n Евро - нажмите 3");
+                    desiredCurrency = Console.ReadLine();
 
-            if (exchangingCurrency == "2" && desiredCurrency == "1")
-                {
-                    Console.WriteLine("Сколько долларов вы хотели бы обменять?");
-                    exchangingUsd = Convert.ToDouble(Console.ReadLine());
-                    rub += exchangingUsd / usdToRub;
-                    usd -= exchangingUsd;
-                    Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
-                }
+                    if (exchangingCurrency == "1" && desiredCurrency == "2")
+                    {
+                        Console.WriteLine("Сколько рублей вы хотели бы обменять?");
+                        exchangingRub = Convert.ToDouble(Console.ReadLine());
+                        usd += exchangingRub / rubToUsd;
+                        rub -= exchangingRub;
+                        Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
+                    }
 
-            if (exchangingCurrency == "1" && desiredCurrency == "3")
-                {
-                    Console.WriteLine("Сколько рублей вы хотели бы обменять?");
-                    exchangingRub = Convert.ToDouble(Console.ReadLine());
-                    eur += exchangingRub / rubToEur;
-                    rub -= exchangingRub;
-                    Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
-                }
+                    else if (exchangingCurrency == "2" && desiredCurrency == "1")
+                    {
+                        Console.WriteLine("Сколько долларов вы хотели бы обменять?");
+                        exchangingUsd = Convert.ToDouble(Console.ReadLine());
+                        rub += exchangingUsd / usdToRub;
+                        usd -= exchangingUsd;
+                        Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
+                    }
 
-            if (exchangingCurrency == "3" && desiredCurrency == "1")
-                {
-                    Console.WriteLine("Сколько евро вы хотели бы обменять?");
-                    exchangingEur = Convert.ToDouble(Console.ReadLine());
-                    rub += exchangingEur / eurToRub;
-                    eur -= exchangingEur;
-                    Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
-                }
-            if (exchangingCurrency == "2" && desiredCurrency == "3")
-                {
-                    Console.WriteLine("Сколько долларов вы хотели бы обменять?");
-                    exchangingUsd = Convert.ToDouble(Console.ReadLine());
-                    eur += exchangingUsd / usdToEur;
-                    usd -= exchangingUsd;
-                    Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
-                }
-            if (exchangingCurrency == "3" && desiredCurrency == "2")
-                {
-                    Console.WriteLine("Сколько евро вы хотели бы обменять?");
-                    exchangingEur = Convert.ToDouble(Console.ReadLine());
-                    usd += exchangingEur / eurToUsd;
-                    eur -= exchangingEur;
-                    Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
-                }    
-            }
-            
+                    else if (exchangingCurrency == "1" && desiredCurrency == "3")
+                    {
+                        Console.WriteLine("Сколько рублей вы хотели бы обменять?");
+                        exchangingRub = Convert.ToDouble(Console.ReadLine());
+                        eur += exchangingRub / rubToEur;
+                        rub -= exchangingRub;
+                        Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
+                    }
+
+                    else if (exchangingCurrency == "3" && desiredCurrency == "1")
+                    {
+                        Console.WriteLine("Сколько евро вы хотели бы обменять?");
+                        exchangingEur = Convert.ToDouble(Console.ReadLine());
+                        rub += exchangingEur / eurToRub;
+                        eur -= exchangingEur;
+                        Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
+                    }
+                    else if (exchangingCurrency == "2" && desiredCurrency == "3")
+                    {
+                        Console.WriteLine("Сколько долларов вы хотели бы обменять?");
+                        exchangingUsd = Convert.ToDouble(Console.ReadLine());
+                        eur += exchangingUsd / usdToEur;
+                        usd -= exchangingUsd;
+                        Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
+                    }
+                    else if (exchangingCurrency == "3" && desiredCurrency == "2")
+                    {
+                        Console.WriteLine("Сколько евро вы хотели бы обменять?");
+                        exchangingEur = Convert.ToDouble(Console.ReadLine());
+                        usd += exchangingEur / eurToUsd;
+                        eur -= exchangingEur;
+                        Console.WriteLine("На вашем счету " + Convert.ToInt32(rub) + " рублей, " + Convert.ToInt32(usd) + " долларов и " + Convert.ToInt32(eur) + " евро");
+                    }
+                    else if (exchangingCurrency == stop)
+                    {
+                        Console.WriteLine("До свидания!");
+                        break;
+                    }
+                }  
         }
     }
 }
