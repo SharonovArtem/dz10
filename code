@@ -17,10 +17,14 @@ namespace jun1
             double rubToEur = 75;
             double usdToEur = 1.08;
             double eurToUsd = 0.99;
-            double rub, usd, eur;
+            double rub;
+            double usd;
+            double eur;
             string exchangingCurrency;
             string desiredCurrency;
-            double exchangingRub, exchangingUsd, exchangingEur;
+            double exchangingRub;
+            double exchangingUsd; 
+            double exchangingEur;
             string exit = "Exit";
             string toExchangeRub = "1";
             string toExchangeUsd = "2";
@@ -28,7 +32,6 @@ namespace jun1
             string desiredRub = "1";
             string desiredUsd = "2";
             string desiredEur = "3";
-            string command;
             bool isWorking = true;
 
             Console.WriteLine("Добро пожаловать в обменник валют!");
@@ -42,26 +45,24 @@ namespace jun1
 
             while (isWorking)
             {
-                Console.WriteLine("Что вы хотели бы обменять?\n Рубли - нажмите " + toExchangeRub + "\n Доллары - нажмите " + toExchangeUsd + "\n евро - нажмите " + toExchangeEur + "\n" +  exit + " - выйти");
+                Console.WriteLine("Что вы хотели бы обменять?\n Рубли - нажмите " + toExchangeRub + "\n Доллары - нажмите " + toExchangeUsd + "\n евро - нажмите " + toExchangeEur + "\n" + exit + " - выйти");
                 exchangingCurrency = Console.ReadLine();
 
-                switch (exchangingCurrency)
+                if (exchangingCurrency == exit)
                 {
-                    case "Exit":
                         Console.WriteLine("До свидания!");
                         isWorking = false;
-                        return;
+                    return;
                 }
 
                 Console.WriteLine("На какую валюту вы хотели бы её обменять?\n Рубли - нажмите " + desiredRub + "\n Доллары - нажмите " + desiredUsd + "\n Евро - нажмите " + desiredEur + "\n" + exit + " - выйти");
                 desiredCurrency = Console.ReadLine();
 
-                switch (desiredCurrency)
+                if (desiredCurrency == exit)
                 {
-                    case "Exit":
                         Console.WriteLine("До свидания!");
                         isWorking = false;
-                        return;
+                    return;
                 }
 
                 if (exchangingCurrency == toExchangeRub && desiredCurrency == desiredUsd)
@@ -152,8 +153,8 @@ namespace jun1
                     }
                     else
                         Console.WriteLine("Недостаточно средств, ведите другую сумму");
-                }  
-            } 
+                }
+            }
         }
     }
 }
